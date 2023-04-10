@@ -1,9 +1,19 @@
 import { useState, useEffect } from 'react';
-import * as API from "./services/lauches";
+import * as API from "./services/launches";
 
 export function App() {
-  return 
+  const [launches, setLaunches] = useState ([]);
+
+  useEffect(() => {
+    API.getAllLaunches().then(setLaunches);
+  }, []);
+
+  return (
+    <>
     <div> Hola Mundo </div>
+    <div> Pepe </div>
+    </>
+  );
   
 }
 
